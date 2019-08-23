@@ -20,8 +20,9 @@ namespace TimeTracker.Models.User
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",ErrorMessage ="Invalid email format.")]
         public string Email { get; set; }
 
-        public Role UserRole { get; set; }
-        public ICollection<TimeRecord> TimeRecords { get; set; }
+        public int UserRole_ID { get; set; }
+        public virtual Role UserRole { get; set; }
+        public virtual ICollection<TimeRecord> TimeRecords { get; set; }
 
         public User(string FullName, string Email)
         {

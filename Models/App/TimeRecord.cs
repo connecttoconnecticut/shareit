@@ -22,8 +22,11 @@ namespace TimeTracker.Models.App
         [MinLength(50, ErrorMessage = "Description needs at least 50 characters.")]
         public string Description { get; set; }
 
-        public User.User User { get; set; }
-        public Task Task { get; set; }
+        public int User_ID { get; set; }
+        public virtual User.User User { get; set; }
+
+        public int Task_ID { get; set; }
+        public virtual Task Task { get; set; }
 
     }
 }

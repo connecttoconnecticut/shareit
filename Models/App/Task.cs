@@ -22,8 +22,12 @@ namespace TimeTracker.Models.App
         [Range(0, 9999999999999999.99)]
         public decimal TimeEstimateInHours { get; set; }
 
-        public Project Project { get; set; }
-        public Role Role { get; set; }
-        public ICollection<TimeRecord> TimeRecords { get; set; }
+        
+        public int Project_ID { get; set; }
+        public virtual Project Project { get; set; }
+
+        public int Role_ID { get; set; }
+        public virtual Role Role { get; set; }
+        public virtual ICollection<TimeRecord> TimeRecords { get; set; }
     }
 }
