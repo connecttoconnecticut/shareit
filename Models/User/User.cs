@@ -22,5 +22,11 @@ namespace TimeTracker.Models.User
 
         public Role UserRole { get; set; }
         public ICollection<TimeRecord> TimeRecords { get; set; }
+
+        public User(string FullName, string Email)
+        {
+            this.FullName = FullName;
+            this.Email = Email;
+        }
     }
 }
