@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using TimeTracker.Models.User;
 
 namespace TimeTracker.Models.App
 {
@@ -20,5 +21,9 @@ namespace TimeTracker.Models.App
         [Required]
         [MinLength(50, ErrorMessage = "Description needs at least 50 characters.")]
         public string Description { get; set; }
+
+        public User.User User { get; set; }
+        public Task Task { get; set; }
+
     }
 }

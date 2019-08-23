@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using TimeTracker.Models.App;
 
 namespace TimeTracker.Models.User
 {
@@ -13,5 +14,8 @@ namespace TimeTracker.Models.User
         [Required]
         [MinLength(3, ErrorMessage = "Min character required: 3")]
         public string Name { get; set; }
+
+        public ICollection<User> UsersWithRole { get; set; }
+        public ICollection<Task> Tasks { get; set; }
     }
 }

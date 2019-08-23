@@ -16,5 +16,7 @@ namespace TimeTracker.Models.App
         //can not be null but can be empty string
         [System.ComponentModel.DefaultValue("")]
         public string Description { get; set; }
+
+        public ICollection<Task> ProjectTasks { get; set; }
     }
 }
