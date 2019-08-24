@@ -11,7 +11,8 @@ namespace TimeTracker.Models.User
     public class User
     {
         [Key]
-        public int ID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ID { get; set; }
         [Required]
         [MinLength(10,ErrorMessage ="Min character required: 10")]
         public string FullName { get; set; }
@@ -20,7 +21,9 @@ namespace TimeTracker.Models.User
         [MinLength(10, ErrorMessage = "Min character required: 10")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",ErrorMessage ="Invalid email format.")]
         public string Email { get; set; }
-        public int UserRole_ID { get; set; }
+        public Guid UserRole_ID { get; set; }
+
+
         [ForeignKey("UserRole_ID")]
         public virtual Role UserRole { get; set; }
         public virtual ICollection<TimeRecord> TimeRecords { get; set; }

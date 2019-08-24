@@ -11,7 +11,8 @@ namespace TimeTracker.Models.App
     public class TimeRecord
     {
         [Key]
-        public int ID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ID { get; set; }
         [Required]
         public DateTime Date { get; set; }
         [Required]
@@ -23,11 +24,12 @@ namespace TimeTracker.Models.App
         [MinLength(50, ErrorMessage = "Description needs at least 50 characters.")]
         public string Description { get; set; }
 
-        public int User_ID { get; set; }
+        public Guid User_ID { get; set; }
+        public Guid Task_ID { get; set; }
+
+
         [ForeignKey("User_ID")]
         public virtual User.User User { get; set; }
-
-        public int Task_ID { get; set; }
         [ForeignKey("Task_ID")]
         public virtual Task Task { get; set; }
     }

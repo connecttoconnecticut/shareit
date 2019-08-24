@@ -26,6 +26,8 @@ namespace TimeTracker.DataAccessLayer
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+
         }
 
     }
