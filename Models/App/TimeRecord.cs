@@ -28,9 +28,9 @@ namespace TimeTracker.Models.App
         public Guid Task_ID { get; set; }
 
 
-        [ForeignKey("User_ID")]
+        [ForeignKey(nameof(User_ID))]
         public virtual User.User User { get; set; }
-        [ForeignKey("Task_ID")]
+        [ForeignKey(nameof(Task_ID))]
         public virtual Task Task { get; set; }
     }
 }

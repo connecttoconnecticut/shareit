@@ -27,7 +27,6 @@ namespace TimeTracker.DataAccessLayer
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-
         }
 
     }

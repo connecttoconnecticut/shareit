@@ -21,10 +21,10 @@ namespace TimeTracker.Models.User
         [MinLength(10, ErrorMessage = "Min character required: 10")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",ErrorMessage ="Invalid email format.")]
         public string Email { get; set; }
-        public Guid UserRole_ID { get; set; }
+        public Guid? UserRole_ID { get; set; }
 
 
-        [ForeignKey("UserRole_ID")]
+        [ForeignKey(nameof(UserRole_ID))]
         public virtual Role UserRole { get; set; }
         public virtual ICollection<TimeRecord> TimeRecords { get; set; }
 

@@ -29,9 +29,9 @@ namespace TimeTracker.Models.App
         public Guid Role_ID { get; set; }
 
 
-        [ForeignKey("Project_ID")]
+        [ForeignKey(nameof(Project_ID))]
         public virtual Project Project { get; set; }
-        [ForeignKey("Role_ID")]
+        [ForeignKey(nameof(Role_ID))]
         public virtual Role Role { get; set; }
         public virtual ICollection<TimeRecord> TimeRecords { get; set; }
     }
