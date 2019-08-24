@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using TimeTracker.Models.User;
@@ -24,9 +25,11 @@ namespace TimeTracker.Models.App
 
         
         public int Project_ID { get; set; }
+        [ForeignKey("Project_ID")]
         public virtual Project Project { get; set; }
 
         public int Role_ID { get; set; }
+        [ForeignKey("Role_ID")]
         public virtual Role Role { get; set; }
         public virtual ICollection<TimeRecord> TimeRecords { get; set; }
     }

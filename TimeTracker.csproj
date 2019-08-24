@@ -163,7 +163,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="DataAccessLayer\DbContextLayer.cs" />
+    <Compile Include="DataAccessLayer\InitialSeeder.cs" />
+    <Compile Include="DataAccessLayer\TimeTrackerDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

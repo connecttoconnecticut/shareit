@@ -14,7 +14,6 @@ namespace TimeTracker.Models.User
         [Required]
         [MinLength(3, ErrorMessage = "Min character required: 3")]
         public string Name { get; set; }
-
         public virtual ICollection<User> UsersWithRole { get; set; }
         public virtual ICollection<Task> Tasks { get; set; }
     }

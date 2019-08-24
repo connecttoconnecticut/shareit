@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using TimeTracker.Models.User;
@@ -23,10 +24,11 @@ namespace TimeTracker.Models.App
         public string Description { get; set; }
 
         public int User_ID { get; set; }
+        [ForeignKey("User_ID")]
         public virtual User.User User { get; set; }
 
         public int Task_ID { get; set; }
+        [ForeignKey("Task_ID")]
         public virtual Task Task { get; set; }
-
     }
 }
